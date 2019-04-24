@@ -1,16 +1,18 @@
 openapi: "3.0.0"
 
 info:
-  title: "Useless sample api"
-  description: "A simple api that returns a 200 if you ping it."
+  title: "Translator"
+  description: "API that accepts a text string and returns the same text string translated into another language."
   version: "1.0"
 
 paths:
-  /ping:
-    get:
+  /extractsourcestring:
+    post:
+      description: "Json with single field containing text in the source language."
       responses:
         '200':
-          description: OK
+          description: "Returns user-provided string in source language."
+          required: true
           content:
             text/plain:
               schema:
